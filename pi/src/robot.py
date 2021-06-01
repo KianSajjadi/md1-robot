@@ -9,13 +9,11 @@ motor_3 = kit.motor3
 
 #Serial comms to teensy
 def get_current_joint_angle(motor):
-  ser = serial.Serial(port='')
-
-
+  ser = serial.Serial(port='/dev/ttyACM0')
   return current_joint_angle
 #Serial comms to teensy
 def drop_ball_in_servo(servo):
-  ser = serial.Serial(port='')
+  ser = serial.Serial(port='/dev/ttyACM0')
 
 def go_to_joint_angle(motor, goal_angle, tolerance):
   current_joint_angle = get_current_joint_angle(motor)
